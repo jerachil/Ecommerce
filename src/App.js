@@ -66,7 +66,7 @@ const App = () => {
   const handleRemoveFromCart = async (productId) => {
     const {cart} = await commerce.cart.remove(productId)
     setCart(cart);
-    window.location.reload();
+    // window.location.reload();
   }
 
   const handleEmptyCart = async () => {
@@ -102,7 +102,7 @@ const App = () => {
 
   
   useEffect(() => {
-    
+
     const getTotalItems = async () => {
       const total = await cart.total_items
       console.log(commerce.cart)

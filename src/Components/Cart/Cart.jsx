@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Button, Grid } from "@mui/material";
+import { Container, Typography, Button, Grid, CircularProgress } from "@mui/material";
 import { ClassNames } from '@emotion/react';
 import "../utils/dotAnimation/styles.css";
 import useStyles from './styles'
@@ -42,7 +42,7 @@ const Cart = ({ cart, BouncingDotsLoader, handleUpdateCartQty, handleRemoveFromC
     )
     const UndefCart = () => (
         <div><Typography variant='subtitle1'></Typography>
-        <BouncingDotsLoader/>
+        <CircularProgress/>
         </div>
     )
 
