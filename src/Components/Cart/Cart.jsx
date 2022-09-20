@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Container, Typography, Button, Grid } from "@mui/material";
 import { ClassNames } from '@emotion/react';
 import "../utils/dotAnimation/styles.css";

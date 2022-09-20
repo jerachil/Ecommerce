@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { purple, yellow, red, common } from '@mui/material/colors';
-import { useTheme, createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
+import { red } from '@mui/material/colors';
+import {  createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material/styles';
 import { commerce } from './lib/commerce';
 import "./Components/utils/dotAnimation/styles.css";
 import { Products, Navbar, Cart, BouncingDotsLoader, Checkout } from './Components'
@@ -32,7 +32,7 @@ const App = () => {
  
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({})
-  const [item, setItem] = useState({})
+ 
   const [order, setOrder] = useState({})
   const [total, setTotal] = useState(0)
   const [errorMessage, setErrorMessage] = useState('')
@@ -99,13 +99,16 @@ const App = () => {
   
   
 
-  const getTotalItems = async () => {
-    const total = await cart.total_items
-    console.log(commerce.cart)
-    setTotal(total)
-  }
+
   
   useEffect(() => {
+    
+    const getTotalItems = async () => {
+      const total = await cart.total_items
+      console.log(commerce.cart)
+      setTotal(total)
+    }
+
     getTotalItems();
     
   }, [cart]);
