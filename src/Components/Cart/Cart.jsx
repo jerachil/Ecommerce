@@ -83,9 +83,9 @@ const Cart = ({ cart, BouncingDotsLoader, handleUpdateCartQty, handleRemoveFromC
     // }
    
     const choice = () => {
-        if(cart.total_items === undefined){
-            setTimeout(() => choice(), 3000)
-        }else if(cart.total_items === 0){
+         if(cart.total_items == undefined){
+            return <UndefCart />
+        }else if(cart.total_items == 0){
             return <EmptyCart /> 
                 }else if(cart.total_items> 0){
             return <FilledCart />
@@ -93,6 +93,7 @@ const Cart = ({ cart, BouncingDotsLoader, handleUpdateCartQty, handleRemoveFromC
                             console.log("error")
                         }
     }
+ 
     
   return (
     
