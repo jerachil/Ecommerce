@@ -82,17 +82,18 @@ const Cart = ({ cart, BouncingDotsLoader, handleUpdateCartQty, handleRemoveFromC
     //      )
     // }
    
-    const choice = () => {
-         if(cart.total_items == undefined){
-            return <UndefCart />
-        }else if(cart.total_items == 0){
-            return <EmptyCart /> 
-                }else if(cart.total_items> 0){
-            return <FilledCart />
-                }else{
-                            console.log("error")
-                        }
-    }
+    const Choice = () => cart.total_items == 0 ? <EmptyCart /> : <FilledCart />
+    // {
+    //      if(cart.total_items == undefined){
+    //         return <UndefCart />
+    //     }else if(cart.total_items == 0){
+    //         return <EmptyCart /> 
+    //             }else if(cart.total_items> 0){
+    //         return <FilledCart />
+    //             }else{
+    //                         console.log("error")
+    //                     }
+    // }
  
     
   return (
@@ -101,7 +102,7 @@ const Cart = ({ cart, BouncingDotsLoader, handleUpdateCartQty, handleRemoveFromC
         <div className={ClassNames.toolbar}/>
         <Typography className={ClassNames.title} variant="h3" gutterBottom m={2} pt={7}>Your Shopping Cart</Typography>
         
-        {choice()}
+        {cart.total_items == undefined ? <UndefCart /> : <Choice />}
         
     </Container>
   )
